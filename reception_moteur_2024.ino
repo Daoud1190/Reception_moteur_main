@@ -1,10 +1,3 @@
-/*
- * Nom du LAB : Communication Bluetooth ESP32->ESP32 (CODE ESCLAVE)
- *   [ CODE ESCLAVE ]
- * Auteur : Khaled Magdy
- * DeepBlueMbedded 2023
- * Pour plus d'informations, visitez : www.DeepBlueMbedded.com
- */
 
 // Inclusion des bibliothèques nécessaires
 #include <ESP32Servo.h>     // Bibliothèque pour contrôler les servomoteurs avec l'ESP32
