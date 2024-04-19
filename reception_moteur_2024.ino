@@ -10,6 +10,7 @@
 #include <ESP32Servo.h>     // Bibliothèque pour contrôler les servomoteurs avec l'ESP32
 #include <Wire.h>           // Bibliothèque pour la communication I2C
 #include "BluetoothSerial.h"// Bibliothèque pour la communication Bluetooth
+#include "m5rotate8.h"
 
 // Vérifie si le Bluetooth est activé
 #if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
