@@ -44,11 +44,11 @@ M5ROTATE8 MM;
 // Informations sur le périphérique ESP32 Bluetooth (Esclave)
 const char *pin = "1234";  // Code PIN pour le couplage Bluetooth
 String device_name = "ESP32-BT-Slave"; // Nom du périphérique Bluetooth
-int servoPouce = 14;        // Broche pour le servomoteur Pouce
-int servoINDEX = 32;        // Broche pour le servomoteur INDEX
-int servoMAJEUR = 15;       // Broche pour le servomoteur MAJEUR
-int servoAnnulaire = 33;    // Broche pour le servomoteur Annulaire
-int servoAuriculaire = 27;  // Broche pour le servomoteur Auriculaire
+int servoPouce = 13;
+int servoINDEX = 12;
+int servoMAJEUR = 27;
+int servoAnnulaire = 33;
+int servoAuriculaire = 15; // Broche pour le servomoteur Auriculaire
 
 char receiveData[7];        // Tableau pour stocker les données reçues
 #define NB_data 7           // Nombre d'éléments dans le tableau receiveData
@@ -72,11 +72,11 @@ void setup() {
   SerialBT.begin(device_name);
 
   // Affichage des informations sur le périphérique
-  Serial.printf("Le périphérique avec le nom \"%s\" est démarré.\nVous pouvez maintenant le coupler avec Bluetooth !\n", device_name.c_str());
+  Serial.printf("The device with name \"%s\" is started.\nNow you can pair it with Bluetooth!\n", device_name.c_str());
 
   // Définition du code PIN pour le couplage Bluetooth
   SerialBT.setPin(pin);
-  Serial.println("Utilisation du PIN");
+  Serial.println("Using PIN");
 
   // Initialisation de l'objet M5ROTATE8
   MM.begin();
