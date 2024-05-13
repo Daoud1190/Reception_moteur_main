@@ -14,7 +14,7 @@ Les servos moteurs qui seront relier au doigts de la main robotique vont être b
 # Les caractéristiques 
 
  
-# Liste des composants : 
+# Liste des composants 
 Electronique 
 
  - 2X Adafruit Carte Feather HUZZAH32 ESP32        
@@ -32,4 +32,8 @@ Mécanique
 - 1X Gants en tissus  
 
 # Schéma bloc
+## Gant
+![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/56ece4cd-7237-44d4-9772-9759d0045244)
+## Main
+![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/6e3d5bc1-0683-43b9-865e-6b1bd5fd6e86)
 
