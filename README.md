@@ -17,19 +17,19 @@ Les servos moteurs qui seront relier au doigts de la main robotique vont être b
 # Liste des composants : 
 Electronique 
 
- -2X Adafruit Carte Feather HUZZAH32 ESP32        
- -5x Capteur de Force, ZD10-100 500g 
- -1X Batterie
- -1X M5PAPER
- -5X résistances smd
- -1X interrupteur
- -5X fusibles
+ - 2X Adafruit Carte Feather HUZZAH32 ESP32        
+ - 5x Capteur de Force, ZD10-100 500g 
+ - 1X Batterie
+ - 1X M5PAPER
+ - 5X résistances smd
+ - 1X interrupteur
+ - 5X fusibles
   
 Mécanique 
 
--1X Bras mécanique  
--5X servo moteur (SG90) 
--1X Gants en tissus  
+- 1X Bras mécanique  
+- 5X servo moteur (SG90) 
+- 1X Gants en tissus  
 
 # Schéma bloc
 
