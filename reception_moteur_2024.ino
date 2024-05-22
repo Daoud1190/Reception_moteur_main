@@ -4,9 +4,6 @@
 #include "BluetoothSerial.h"  // Bibliothèque pour la communication Bluetooth
 #include "m5rotate8.h"
 #include <Wire.h>
-#include <Adafruit_SH110X.h>
-
-Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
 
 // Vérifie si le Bluetooth est activé
 #if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
@@ -88,16 +85,6 @@ void setup() {
   myservoMajeur.attach(servoMAJEUR);
   myservoAnnulaire.attach(servoAnnulaire);
   myservoAuriculaire.attach(servoAuriculaire);
-
-
-  display.begin(0x3C, true);
-
-  display.clearDisplay();
-
-  display.setTextSize(1);
-  display.setTextColor(SH110X_WHITE);
-  display.setRotation(1);
-  Serial1.begin(9600);
 
   // Initialisation de la communication I2C
   Wire.begin();
@@ -220,11 +207,6 @@ void pouce() {
 void index() {
   encoderValue1 = MM.getAbsCounter(1);  // Lecture de la position de l'encodeur
   mappedValue1 = map(encoderValue1, 0, 100, 50, 100);
-  
-  display.clearDisplay();
-  display.setCursor(30, 10);
-  display.print("encoderValue");
-  display.setRotation(1);
   
   // Vérification des limites de l'encodeur
   if (encoderValue1 <= 0) {
