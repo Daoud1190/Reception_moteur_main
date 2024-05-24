@@ -42,7 +42,7 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 
 - [2X Adafruit Carte Feather HUZZAH32 ESP32](https://www.adafruit.com/product/3405)
 - [5x Capteur de Force, ZD10-100 500g](https://www.gotronic.fr/art-capteur-de-force-flexiforce-100-lb-31526.htm)
-- [1X Batterie
+- 1X Batterie
 - [1X M5PAPER](https://shop.m5stack.com/products/m5paper-esp32-development-kit)
 - 5X résistances smd
 - 1X interrupteur
