@@ -1,35 +1,54 @@
 # Reception_main_robotique
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/d2b7fc87-36e1-4f90-8f4a-3bf8a841f538)
 
-# Source du project
+# Source du projet
 https://www.gotronic.fr/blog/articles/controle-dune-main-robotique/
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/caa6b8c0-9e91-4374-8693-e4056b2956e0)
 
 # Introduction 
  
-A l'occasion de mon TFE de fin de 6eme année secondaire. J’ai décidé de mener un projet qui va me permettre d’appliquer mes connaissance acquis grâce à mon apprentissage à l’INRACI. 
-Le but de mon projet est de crée une main que l’on pourra contrôle grâce à un gant à distance. 
+A l'occasion de mon TFE de fin de 6ème année secondaire, j’ai décidé de mener un projet qui va me permettre d’appliquer mes connaissances acquises grâce à mon apprentissage à l’INRACI. 
+Le but de mon projet est de créer une main que l’on pourra contrôler grâce à un gant à distance. 
 Mes motivations pour ce projet viennent de ma passion pour la domotique et le contrôle à distance. 
-Depuis tout petit je suis fascinée par les entités contrôler à distance et se projet est l’occasion de rallier ce que j’aime et l’électronique. 
-Rapide explication
-Les servos moteurs qui seront relier au doigts de la main robotique vont être brancher à une première carte ESP32 qui communiquera avec la même carte. La deuxième carte sera elle brancher au 5 capteurs de flexion qui seront coller aux gants. Les 2 carte pourront communiquer grâce à leur options BT intégré.  
+Depuis tout petit, je suis fasciné par les entités contrôlées à distance et ce projet est l’occasion de rallier ce que j’aime et l’électronique. 
+Rapide explication :
+Les servos moteurs qui seront reliés aux doigts de la main robotique vont être branchés à une première carte ESP32 qui communiquera avec une deuxième carte ESP32. Cette dernière sera branchée aux 5 capteurs de flexion qui seront collés aux gants. Les deux cartes pourront communiquer grâce à leurs options BT intégrées.  
   
 # Les caractéristiques 
-![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/2947bbc1-b362-43ef-ade1-9efd11d45e94)
 
+## Général
+|                    | Main                       | Gants                    |
+|--------------------|----------------------------|--------------------------|
+| 2 boutons poussoir | Sur la carte ESP32         | Sur la carte ESP32       |
+| 1 LED              | LED sur la carte ESP32     | LED sur la carte ESP32   |
+| Main robotique avec 5 servos moteurs | Servo moteur SG90 | X                    |
+| Gants avec 5 capteurs de flexion (x résolutions) | X | A déterminer           |
+
+## Electronique
+|                    | Main                       | Gants                    |
+|--------------------|----------------------------|--------------------------|
+| BT 2,4 GHz         | Sur la carte ESP32         | Sur la carte ESP32       |
+| Consommation       | 170 et 250 mA pour les 5 servos moteurs | ESP32 (80-180 mA) |
+| Batteries 5 volt   | A déterminer               | A déterminer             |
+
+## Mécanique
+|                    | Main                       | Gants                    |
+|--------------------|----------------------------|--------------------------|
+| Poids              | 289g                       | 5g                       |
+| Matière            | Acrylique noir 5.0         | Tissu                    |
 
 # Liste des composants 
-Electronique 
+## Electronique 
 
- - 2X Adafruit Carte Feather HUZZAH32 ESP32
- - 5x Capteur de Force, ZD10-100 500g
- - 1X Batterie
- - 1X M5PAPER
- - 5X résistances smd
- - 1X interrupteur
- - 5X fusibles réarmable PTC
+- 2X Adafruit Carte Feather HUZZAH32 ESP32
+- 5x Capteur de Force, ZD10-100 500g
+- 1X Batterie
+- 1X M5PAPER
+- 5X résistances smd
+- 1X interrupteur
+- 5X fusibles réarmable PTC
   
-Mécanique 
+## Mécanique 
 
 - 1X Bras mécanique
 - 5X servo moteur (SG90)
@@ -47,5 +66,3 @@ Mécanique
 
 # PCB
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/3c00c4ff-1e1e-43a6-be44-43c27cff6cb6)
-
-
