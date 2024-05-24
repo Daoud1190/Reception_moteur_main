@@ -66,4 +66,5 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 
 # PCB
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/3c00c4ff-1e1e-43a6-be44-43c27cff6cb6)
+
 [Lien du PCB sur EASYEDA](https://oshwlab.com/daoud01/pcb-moteur)
