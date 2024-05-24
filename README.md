@@ -17,12 +17,12 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 # Les caractéristiques 
 
 ## Général
-|                    | Main                       | Gants                    |
-|--------------------|----------------------------|--------------------------|
-| 2 boutons poussoir | Sur la carte ESP32         | Sur la carte ESP32       |
-| 1 LED              | LED sur la carte ESP32     | LED sur la carte ESP32   |
-| Main robotique avec 5 servos moteurs | Servo moteur SG90 | X                    |
-| Gants avec 5 capteurs de flexion (x résolutions) | X | A déterminer           |
+|                                    | Main                       | Gants                    |
+|------------------------------------|----------------------------|--------------------------|
+| 2 boutons poussoir                 | Sur la carte ESP32         | Sur la carte ESP32       |
+| 1 LED                              | LED sur la carte ESP32     | LED sur la carte ESP32   |
+| Main robotique avec 5 servos moteurs| Servo moteur SG90          | X                        |
+| Gants avec 5 capteurs de flexion (x résolutions)| X                        | A déterminer             |
 
 ## Electronique
 |                    | Main                       | Gants                    |
@@ -40,10 +40,10 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 # Liste des composants 
 ## Electronique 
 
-- 2X Adafruit Carte Feather HUZZAH32 ESP32
-- 5x Capteur de Force, ZD10-100 500g
-- 1X Batterie
-- 1X M5PAPER
+- [2X Adafruit Carte Feather HUZZAH32 ESP32](https://www.adafruit.com/product/3405)
+- [5x Capteur de Force, ZD10-100 500g](https://www.gotronic.fr/art-capteur-de-force-flexiforce-100-lb-31526.htm)
+- [1X Batterie
+- [1X M5PAPER](https://shop.m5stack.com/products/m5paper-esp32-development-kit)
 - 5X résistances smd
 - 1X interrupteur
 - 5X fusibles réarmable PTC
@@ -51,7 +51,7 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 ## Mécanique 
 
 - 1X Bras mécanique
-- 5X servo moteur (SG90)
+- [5X servo moteur (SG90)](https://www.towerpro.com.tw/product/sg90-7/)
 - 1X Gants en tissus
 
 # Schéma bloc
