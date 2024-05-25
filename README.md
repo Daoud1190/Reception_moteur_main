@@ -1,4 +1,7 @@
-# Reception_main_robotique
+## Reception main robotisé
+![Static Badge](https://img.shields.io/badge/Reception%20main%20robotis%C3%A9%20-61DBFB?style=for-the-badge&logo=react&labelColor=black)
+
+https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/78ad2040-32d2-4d7c-88e3-05bd72a42119
 
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/d2b7fc87-36e1-4f90-8f4a-3bf8a841f538)
 
@@ -83,7 +86,3 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 
 > [!NOTE]
 > Appuyer sur l'image pour acceder au projet sur Easyeda
-
-## Vidéo
-https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/78ad2040-32d2-4d7c-88e3-05bd72a42119
-
