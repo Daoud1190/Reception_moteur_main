@@ -1,9 +1,7 @@
 ## Reception main robotisé
-![Static Badge](https://img.shields.io/badge/Reception%20main%20robotis%C3%A9%20-61DBFB?style=for-the-badge&logo=react&labelColor=black) ![ alt_text ](https://img.shields.io/badge/Version-0.1-CC0000?style=for-the-badge) [![ alt_text ](https://img.shields.io/badge/Contacte-Twitter-00878F?style=for-the-badge)](https://x.com/DAOUD_1190)
+[![Static Badge](https://img.shields.io/badge/Reception%20main%20robotis%C3%A9%20-61DBFB?style=for-the-badge&logo=Arduino&labelColor=black)](https://github.com/Daoud1190/Reception_moteur_main) [![Static Badge](https://img.shields.io/badge/Transmission%20main%20robotis%C3%A9%20-61DBFB?style=for-the-badge&logo=Arduino&labelColor=black)](https://github.com/Thomas2809/transmission) ![ alt_text ](https://img.shields.io/badge/Version-0.1-CC0000?style=for-the-badge) [![ alt_text ](https://img.shields.io/badge/Contacte-Twitter-00878F?style=for-the-badge)](https://x.com/DAOUD_1190)
 
-
-
-https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/78ad2040-32d2-4d7c-88e3-05bd72a42119
+> © INRACI
 
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/d2b7fc87-36e1-4f90-8f4a-3bf8a841f538)
 
