@@ -79,9 +79,10 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/b35885bd-8d20-4a4b-b1e1-3c8ca8ec3a1a)
 
 ## PCB
-![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/3c00c4ff-1e1e-43a6-be44-43c27cff6cb6)
+[![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/3c00c4ff-1e1e-43a6-be44-43c27cff6cb6)](https://oshwlab.com/daoud01/pcb-moteur)
 
-[Lien du PCB sur EASYEDA](https://oshwlab.com/daoud01/pcb-moteur)
+> [!NOTE]
+> Appuyer sur l'image pour acceder au projet sur Easyeda
 
 ## Vidéo
 https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/78ad2040-32d2-4d7c-88e3-05bd72a42119
