@@ -3,7 +3,7 @@
 #include <Wire.h>             // Bibliothèque pour la communication I2C
 #include "BluetoothSerial.h"  // Bibliothèque pour la communication Bluetooth
 #include "m5rotate8.h"
-#include <Wire.h>
+#include <Adafruit_SH110X.h>  // Librairie de l'écran
 
 // Vérifie si le Bluetooth est activé
 #if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
@@ -31,7 +31,8 @@ Servo myservo2;
 Servo myservo3;
 Servo myservo4;
 
-#define NB_data 7  // Nombre d'éléments dans le tableau receiveData
+Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);  // Définition de l'objet "display" 128x64 points
+#define NB_data 7                                           // Nombre d'éléments dans le tableau receiveData
 // Variables pour stocker les positions des servomoteurs
 
 enum mode {
@@ -98,6 +99,13 @@ void setup() {
   Serial.println("Using PIN");
   // Initialisation de l'objet M5ROTATE8
 
+  display.begin(0x3C, true);  // Initialisation du display à l'addresse 0x3C
+  display.display();          // Affichage du buffer par défaut
+  delay(1000);
+
+  display.clearDisplay();  // Effacement du buffer
+  display.display();
+
   MM.begin();
   Serial.print("M5ROTATE8_LIB_VERSION: ");
   Serial.println(M5ROTATE8_LIB_VERSION);
@@ -105,12 +113,16 @@ void setup() {
   MM.resetAll();
 
   delay(100);
+  display.setTextSize(0);
+  display.setTextColor(SH110X_WHITE);
+  display.setRotation(6);
+  display.setCursor(05, 05);
+  display.print("Bienvenue");
 }
 
 // Fonction de boucle principale
 void loop() {
   // Vérifie si des données sont disponibles sur le port série et les envoie via Bluetooth
-
   if (SerialBT.available()) {
     SerialBT.write(Serial.read());
     DATA = SerialBT.read();  // Lire le caractère envoyé via Bluetooth
@@ -119,11 +131,44 @@ void loop() {
     case '-':
       Serial.println("CHOIX MENU");
       ModeActuelle = Choixmenu;
+      display.clearDisplay();
+      display.display();
+      display.setTextSize(0);
+      display.setTextColor(SH110X_WHITE);
+      display.setRotation(6);
+      display.setCursor(05, 05);
+      display.print("Bienvenue");
+
+      display.setCursor(00, 50);
+      display.print("Choix du");
+      display.setCursor(00, 60);
+      display.print("Mode");
+      display.display();
       break;
 
     case '&':
       Serial.println("MODE MANUEL");
       ModeActuelle = Manuelle;
+
+      display.clearDisplay();
+      display.display();
+      display.setTextSize(0);
+      display.setTextColor(SH110X_WHITE);
+      display.setRotation(6);
+      display.setCursor(00, 50);
+      display.print("Mode Manuel");
+      display.setCursor(05, 60);
+      display.print(encoderValue);
+      display.setCursor(05, 70);
+      display.print(encoderValue1);
+      display.setCursor(05, 80);
+      display.print(encoderValue2);
+      display.setCursor(05, 90);
+      display.print(encoderValue3);
+      display.setCursor(05, 100);
+      display.print(encoderValue4);
+      display.display();
+
       //************************************pouce****************************
       pouce();
       //*******************************index*******************************
@@ -142,6 +187,7 @@ void loop() {
       // Lit le premier caractère des données reçues
       receiveData[0] = DATA;
       // Vérifie si le premier caractère est '#'
+ 
       if (SerialBT.available()) {
 
         if (receiveData[0] == '#') {
@@ -170,6 +216,25 @@ void loop() {
         myservoMajeur.write(receiveData[3]);
         myservoAnnulaire.write(receiveData[4]);
         myservoAuriculaire.write(receiveData[5]);
+
+     display.clearDisplay();
+      display.display();
+      display.setTextSize(0);
+      display.setTextColor(SH110X_WHITE);
+      display.setRotation(6);
+      display.setCursor(00, 50);
+      display.print("Mode BT");
+      display.setCursor(05, 60);
+      display.print(receiveData[1]);
+      display.setCursor(05, 70);
+      display.print(receiveData[2]);
+      display.setCursor(05, 80);
+      display.print(receiveData[3]);
+      display.setCursor(05, 90);
+      display.print(receiveData[4]);
+      display.setCursor(05, 100);
+      display.print(receiveData[5]);
+      display.display();
 
         // Vérifie si les données reçues sont valides
         if (receiveData[0] == '#' && receiveData[6] == (receiveData[1] ^ receiveData[2] ^ receiveData[3] ^ receiveData[4] ^ receiveData[5]))
@@ -207,7 +272,7 @@ void pouce() {
 void index() {
   encoderValue1 = MM.getAbsCounter(1);  // Lecture de la position de l'encodeur
   mappedValue1 = map(encoderValue1, 0, 100, 50, 100);
-  
+
   // Vérification des limites de l'encodeur
   if (encoderValue1 <= 0) {
     encoderValue1 = 0;
