@@ -55,7 +55,7 @@ char DATA;
 M5ROTATE8 MM;
 
 // Informations sur le périphérique ESP32 Bluetooth (Esclave)
-const char *pin = "4321";               // Code PIN pour le couplage Bluetooth
+const char* pin = "4321";               // Code PIN pour le couplage Bluetooth
 String device_name = "ESP32-BT-Slave";  // Nom du périphérique Bluetooth
 int servoPouce = 14;
 int servoINDEX = 32;
@@ -113,11 +113,6 @@ void setup() {
   MM.resetAll();
 
   delay(100);
-  display.setTextSize(0);
-  display.setTextColor(SH110X_WHITE);
-  display.setRotation(6);
-  display.setCursor(05, 05);
-  display.print("Bienvenue");
 }
 
 // Fonction de boucle principale
@@ -131,43 +126,11 @@ void loop() {
     case '-':
       Serial.println("CHOIX MENU");
       ModeActuelle = Choixmenu;
-      display.clearDisplay();
-      display.display();
-      display.setTextSize(0);
-      display.setTextColor(SH110X_WHITE);
-      display.setRotation(6);
-      display.setCursor(05, 05);
-      display.print("Bienvenue");
-
-      display.setCursor(00, 50);
-      display.print("Choix du");
-      display.setCursor(00, 60);
-      display.print("Mode");
-      display.display();
       break;
 
     case '&':
       Serial.println("MODE MANUEL");
       ModeActuelle = Manuelle;
-
-      display.clearDisplay();
-      display.display();
-      display.setTextSize(0);
-      display.setTextColor(SH110X_WHITE);
-      display.setRotation(6);
-      display.setCursor(00, 50);
-      display.print("Mode Manuel");
-      display.setCursor(05, 60);
-      display.print(encoderValue);
-      display.setCursor(05, 70);
-      display.print(encoderValue1);
-      display.setCursor(05, 80);
-      display.print(encoderValue2);
-      display.setCursor(05, 90);
-      display.print(encoderValue3);
-      display.setCursor(05, 100);
-      display.print(encoderValue4);
-      display.display();
 
       //************************************pouce****************************
       pouce();
@@ -187,7 +150,7 @@ void loop() {
       // Lit le premier caractère des données reçues
       receiveData[0] = DATA;
       // Vérifie si le premier caractère est '#'
- 
+
       if (SerialBT.available()) {
 
         if (receiveData[0] == '#') {
@@ -209,33 +172,6 @@ void loop() {
         Serial.printf("d:%d\n", receiveData[4]);
         Serial.printf("e:%d\n", receiveData[5]);
         Serial.printf("f:%d\n", receiveData[6]);
-
-        // Définit les positions des servomoteurs en fonction des données reçues
-        myservoPouce.write(receiveData[1]);
-        myservoINDEX.write(receiveData[2]);
-        myservoMajeur.write(receiveData[3]);
-        myservoAnnulaire.write(receiveData[4]);
-        myservoAuriculaire.write(receiveData[5]);
-
-     display.clearDisplay();
-      display.display();
-      display.setTextSize(0);
-      display.setTextColor(SH110X_WHITE);
-      display.setRotation(6);
-      display.setCursor(00, 50);
-      display.print("Mode BT");
-      display.setCursor(05, 60);
-      display.print(receiveData[1]);
-      display.setCursor(05, 70);
-      display.print(receiveData[2]);
-      display.setCursor(05, 80);
-      display.print(receiveData[3]);
-      display.setCursor(05, 90);
-      display.print(receiveData[4]);
-      display.setCursor(05, 100);
-      display.print(receiveData[5]);
-      display.display();
-
         // Vérifie si les données reçues sont valides
         if (receiveData[0] == '#' && receiveData[6] == (receiveData[1] ^ receiveData[2] ^ receiveData[3] ^ receiveData[4] ^ receiveData[5]))
           Serial.print("Données OK\n");
@@ -246,6 +182,12 @@ void loop() {
         receiveData[0] = 0;
         // Ajoutez d'autres cas pour d'autres modes si nécessaire
       }
+      // Définit les positions des servomoteurs en fonction des données reçues
+      myservoPouce.write(receiveData[1]);
+      myservoINDEX.write(receiveData[2]);
+      myservoMajeur.write(receiveData[3]);
+      myservoAnnulaire.write(receiveData[4]);
+      myservoAuriculaire.write(receiveData[5]);
       break;
   }
 }
