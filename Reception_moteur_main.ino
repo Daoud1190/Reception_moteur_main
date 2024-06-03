@@ -106,6 +106,7 @@ void setup() {
   display.clearDisplay();  // Effacement du buffer
   display.display();
 
+
   MM.begin();
   Serial.print("M5ROTATE8_LIB_VERSION: ");
   Serial.println(M5ROTATE8_LIB_VERSION);
@@ -113,6 +114,7 @@ void setup() {
   MM.resetAll();
 
   delay(100);
+  ecran(0, SH110X_WHITE, 6, 05, 05, "Bienvenue");
 }
 
 // Fonction de boucle principale
@@ -126,6 +128,10 @@ void loop() {
     case '-':
       Serial.println("CHOIX MENU");
       ModeActuelle = Choixmenu;
+      display.clearDisplay();
+      ecran(0, SH110X_WHITE, 6, 00, 50, "Choix du");
+      ecran(0, SH110X_WHITE, 6, 00, 60, "Mode");
+
       break;
 
     case '&':
@@ -142,6 +148,14 @@ void loop() {
       annulaire();
       //**************************************auriculaire*************************
       auriculaire();
+      display.clearDisplay();
+      ecran(0, SH110X_WHITE, 6, 00, 50, "ModeManuel");
+
+      ecranValeur(0, SH110X_WHITE, 6, 05, 60, (encoderValue));
+      ecranValeur(0, SH110X_WHITE, 6, 05, 70, (encoderValue1));
+      ecranValeur(0, SH110X_WHITE, 6, 05, 80, (encoderValue2));
+      ecranValeur(0, SH110X_WHITE, 6, 05, 90, (encoderValue3));
+      ecranValeur(0, SH110X_WHITE, 6, 05, 100, (encoderValue4));
       break;
 
     case '#':
@@ -182,6 +196,14 @@ void loop() {
         receiveData[0] = 0;
         // Ajoutez d'autres cas pour d'autres modes si nécessaire
       }
+      display.clearDisplay();
+      ecran(0, SH110X_WHITE, 6, 00, 50, "Mode BT");
+
+      ecranValeur(0, SH110X_WHITE, 6, 05, 60, receiveData[1]);
+      ecranValeur(0, SH110X_WHITE, 6, 05, 70, receiveData[2]);
+      ecranValeur(0, SH110X_WHITE, 6, 05, 80, receiveData[3]);
+      ecranValeur(0, SH110X_WHITE, 6, 05, 90, receiveData[4]);
+      ecranValeur(0, SH110X_WHITE, 6, 05, 100, receiveData[5]);
       // Définit les positions des servomoteurs en fonction des données reçues
       myservoPouce.write(receiveData[1]);
       myservoINDEX.write(receiveData[2]);
@@ -288,4 +310,21 @@ void auriculaire() {
   // Affichage de la valeur de l'encodeur
   Serial.println(encoderValue4);
   delay(10);  // Délai entre chaque itération
+}
+
+void ecran(int taille, int couleur, int rotation, int Y, int X, const char* texte) {
+  display.setTextSize(taille);
+  display.setTextColor(couleur);
+  display.setRotation(rotation);
+  display.setCursor(Y, X);
+  display.print(texte);
+  display.display();
+}
+void ecranValeur(int taille, int couleur, int rotation, int Y, int X,int texte) {
+  display.setTextSize(taille);
+  display.setTextColor(couleur);
+  display.setRotation(rotation);
+  display.setCursor(Y, X);
+  display.print(texte);
+  display.display();
 }
