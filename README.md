@@ -81,7 +81,7 @@ Les servos moteurs qui seront reliés aux doigts de la main robotique vont être
 ### Main
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/6e3d5bc1-0683-43b9-865e-6b1bd5fd6e86)
 
-## Schéma de principe sans connecteur
+##  Schéma de principe sans connecteur
 ![image](https://github.com/Daoud1190/reception_moteur_2024/assets/146357859/b35885bd-8d20-4a4b-b1e1-3c8ca8ec3a1a)
 
 ## PCB
